@@ -6,7 +6,7 @@ Open-world 3D survival game made with Unity. 🎮
 </p>
 
 <h4 align="center"> 
-	3D Survival Game (Geriye Dönüş) - Main Menu 
+	3D Survival Game - Main Menu 
 </h4>
  <br>
 
@@ -92,8 +92,6 @@ Open the cloned repository in unity.
 
 
 ### Credits : 
-
-Created by Şevket Binali - sevketbinali@gmail.com
 
 Kenney assets : [Survival Kit](https://www.kenney.nl/assets/survival-kit) &nbsp; [Animated Characters](https://www.kenney.nl/assets/animated-characters)
 
