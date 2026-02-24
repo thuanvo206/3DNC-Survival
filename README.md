@@ -1,6 +1,5 @@
-# 3D-Survival-Game-Unity
-Open-world 3D survival game made with Unity. 🎮 
-
+# 3D-Survival
+Game sinh tồn thế giới mở. 🎮
 <h4 align="center"> 
 	3D Survival Game - Main Menu 
 </h4>
@@ -17,31 +16,31 @@ Open-world 3D survival game made with Unity. 🎮
 	
 #### Inventory System :	
 
-![Gif](https://github.com/sevketbinali/3D-Survival-Game-Unity/blob/master/Screenshots/Gifs/inventory-and-pickup.gif)
+![Gif](https://github.com/thuanvo206/3DNC-Survival/blob/master/Screenshots/Gifs/inventory-and-pickup.gif)
 	
 #### Gathering Woods : 
 	
-![Gif](https://github.com/sevketbinali/3D-Survival-Game-Unity/blob/master/Screenshots/Gifs/gathering-woods.gif)
+![Gif](https://github.com/thuanvo206/3DNC-Survival/blob/master/Screenshots/Gifs/gathering-woods.gif)
 	
 #### Gathering Stones : 
 	
-![Gif](https://github.com/sevketbinali/3D-Survival-Game-Unity/blob/master/Screenshots/Gifs/gathering-stones.gif)
+![Gif](https://github.com/thuanvo206/3DNC-Survival/blob/master/Screenshots/Gifs/gathering-stones.gif)
 	
 #### Crafting System : 
 	
-![Gif](https://github.com/sevketbinali/3D-Survival-Game-Unity/blob/master/Screenshots/Gifs/crafting.gif)
+![Gif](https://github.com/thuanvo206/3DNC-Survival/blob/master/Screenshots/Gifs/crafting.gif)
 	
 #### Building System :
 
-![Gif](https://github.com/sevketbinali/3D-Survival-Game-Unity/blob/master/Screenshots/Gifs/building-and-sleep.gif)
+![Gif](https://github.com/thuanvo206/3DNC-Survival/blob/master/Screenshots/Gifs/building-and-sleep.gif)
 	
 #### Attacking System : 
 
-![Gif](https://github.com/sevketbinali/3D-Survival-Game-Unity/blob/master/Screenshots/Gifs/attacking.gif)
+![Gif](https://github.com/thuanvo206/3DNC-Survival/blob/master/Screenshots/Gifs/attacking.gif)
 	
 #### Underwater Effect : 
 
-![Gif](https://github.com/sevketbinali/3D-Survival-Game-Unity/blob/master/Screenshots/Gifs/underwater-effect.gif)
+![Gif](https://github.com/thuanvo206/3DNC-Survival/blob/master/Screenshots/Gifs/underwater-effect.gif)
 
 	
 
