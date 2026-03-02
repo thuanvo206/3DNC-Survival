@@ -264,15 +264,29 @@ public class NPC : MonoBehaviour, IDamagable
 
     private float delay = 0.0f;
 
+    // --- PHẦN QUAN TRỌNG NHẤT ĐỂ LÀM NHIỆM VỤ ---
     void Die()
     {
-        for (int x = 0; x < dropOnDeath.Length; x++)
+        // 1. Gửi tên về QuestManager để kiểm tra (Rabbit, Wolf, Bear, hay Zombie)
+        if (QuestManager.instance != null)
         {
-            Instantiate(dropOnDeath[x].dropPrefab, transform.position, Quaternion.identity);
-            
+            QuestManager.instance.OnEnemyKilled(gameObject.name); 
         }
+
+        // 2. Rơi đồ khi chết
+        if (dropOnDeath != null)
+        {
+            for (int x = 0; x < dropOnDeath.Length; x++)
+            {
+                Instantiate(dropOnDeath[x].dropPrefab, transform.position, Quaternion.identity);
+            }
+        }
+
+        // 3. Hiệu ứng và xóa quái
         anim.SetTrigger("Die");
-        Destroy(gameObject,this.GetComponentInChildren<Animator>().GetCurrentAnimatorStateInfo(0).length+delay);
+        agent.isStopped = true;
+        // Hủy object sau khi animation chết kết thúc (khoảng 2 giây)
+        Destroy(gameObject, 2f); 
     }
 
     IEnumerator DamageFlash()
