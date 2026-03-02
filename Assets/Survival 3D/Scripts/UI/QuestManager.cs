@@ -7,7 +7,7 @@ public class QuestManager : MonoBehaviour
     public TextMeshProUGUI questText;
 
     [Header("Cấu hình vật phẩm")]
-    public string itemToPick = "Item Pickaxe";
+    public string itemToPick = "Item Sword";
 
     // Biến kiểm soát bước nhiệm vụ hiện tại
     private int currentQuestStep = 1; 
@@ -16,7 +16,7 @@ public class QuestManager : MonoBehaviour
     void Awake() { instance = this; }
 
     void Start() {
-        UpdateUI("Nhiệm vụ 1: Tìm và nhặt cây Cuốc", Color.black);
+        UpdateUI("Nhiệm vụ 1: Tìm và nhặt cây Kiếm", Color.black);
     }
 
     void Update() {
