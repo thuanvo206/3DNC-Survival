@@ -16,7 +16,7 @@ public class QuestManager : MonoBehaviour
     void Awake() { instance = this; }
 
     void Start() {
-        UpdateUI("Nhiệm vụ 1: Tìm và nhặt cây Cuốc", Color.white);
+        UpdateUI("Nhiệm vụ 1: Tìm và nhặt cây Cuốc", Color.black);
     }
 
     void Update() {
@@ -24,7 +24,7 @@ public class QuestManager : MonoBehaviour
         if (currentQuestStep == 1) {
             if (GameObject.Find(itemToPick) == null) {
                 currentQuestStep = 2; // Xong NV1 chuyển sang NV2
-                UpdateUI("Nhiệm vụ 2: Tiêu diệt 5 con Thỏ (0/5)", Color.yellow);
+                UpdateUI("Nhiệm vụ 2: Tiêu diệt 5 con Thỏ (0/5)", Color.black);
             }
         }
     }
@@ -54,11 +54,11 @@ public class QuestManager : MonoBehaviour
             if (currentKills >= targetAmount) {
                 currentKills = 0;
                 currentQuestStep = nextStep;
-                UpdateUI(nextDesc, (nextStep == 6) ? Color.cyan : Color.yellow);
+                UpdateUI(nextDesc, (nextStep == 6) ? Color.cyan : Color.black);
             } else {
                 // Cập nhật tiến độ hiện tại
                 string currentDesc = GetCurrentQuestName(currentQuestStep);
-                UpdateUI($"{currentDesc} ({currentKills}/{targetAmount})", Color.yellow);
+                UpdateUI($"{currentDesc} ({currentKills}/{targetAmount})", Color.black);
             }
         }
     }
@@ -73,7 +73,7 @@ public class QuestManager : MonoBehaviour
 
     public void OnCraftBed() {
         if (currentQuestStep == 6) {
-            UpdateUI("Hoàn thành: Chúc bạn ngủ ngon!", Color.green);
+            UpdateUI("Hoàn thành: Chúc bạn ngủ ngon!", Color.black);
             Invoke("HideUI", 5f);
         }
     }
