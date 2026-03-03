@@ -62,7 +62,7 @@ MonoBehaviour:
   maxWanderDistance: 9
   minWanderWaitTime: 1
   maxWanderWaitTime: 3
-  damage: 10
+  damage: 8
   attackRate: 1.5
   attackDistance: 2
   audioSource: {fileID: 1990658941175673073}

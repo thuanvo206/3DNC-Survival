@@ -7,7 +7,7 @@ public class QuestManager : MonoBehaviour
     public TextMeshProUGUI questText;
 
     [Header("Cấu hình Nhiệm vụ 1")]
-    public GameObject craftingTableReward; 
+    public GameObject craftingTableReward; // Kéo bảng công thức vào đây để làm phần thưởng
 
     private int currentQuestStep = 1; 
     private int collectedStone = 0;
@@ -17,36 +17,41 @@ public class QuestManager : MonoBehaviour
     void Awake() { instance = this; }
 
     void Start() {
+        // Ẩn bảng công thức khi bắt đầu game
         if (craftingTableReward != null) craftingTableReward.SetActive(false);
         UpdateQuestUI();
     }
 
+    // Hàm nhận dữ liệu khi bạn nhặt đồ từ ItemObject.cs
     public void OnResourceCollected(string itemName) {
         if (currentQuestStep == 1) {
+            // Kiểm tra tên vật phẩm nhặt được có chứa từ khóa không
             if (itemName.Contains("Stone")) collectedStone++;
             else if (itemName.Contains("Log") || itemName.Contains("Wood")) collectedWood++;
 
             UpdateQuestUI();
 
+            // Điều kiện hoàn thành: 5 Đá và 10 Gỗ
             if (collectedStone >= 5 && collectedWood >= 10) {
-                CompleteQuest1();
+                CompleteResourceQuest();
             }
         }
     }
 
-    void CompleteQuest1() {
+    void CompleteResourceQuest() {
         currentQuestStep = 2;
+        // Hiện phần thưởng bảng công thức
         if (craftingTableReward != null) craftingTableReward.SetActive(true);
+        
         UpdateUI("Nhiệm vụ 2: Tiêu diệt 5 con Thỏ (0/5)", Color.black);
     }
 
     public void OnEnemyKilled(string killedEnemyName) {
-        // Chỉ xử lý từ bước 2 đến bước 5 (Zombie là cuối cùng)
         switch (currentQuestStep) {
             case 2: CheckKill(killedEnemyName, "Rabbit", 5, 3, "Nhiệm vụ 3: Tiêu diệt 3 con Sói (0/3)"); break;
             case 3: CheckKill(killedEnemyName, "Wolf", 3, 4, "Nhiệm vụ 4: Tiêu diệt 2 con Gấu (0/2)"); break;
             case 4: CheckKill(killedEnemyName, "Bear", 2, 5, "Nhiệm vụ 5: Tiêu diệt 1 con Zombie (0/1)"); break;
-            case 5: CheckKill(killedEnemyName, "Zombie", 1, 0, ""); break; // Bước cuối
+            case 5: CheckKill(killedEnemyName, "Zombie", 1, 0, ""); break;
         }
     }
 
@@ -56,12 +61,8 @@ public class QuestManager : MonoBehaviour
             if (currentKills >= targetAmount) {
                 currentKills = 0;
                 currentQuestStep = nextStep;
-
-                if (currentQuestStep == 0) {
-                    FinishAllQuests();
-                } else {
-                    UpdateUI(nextDesc, Color.black);
-                }
+                if (currentQuestStep == 0) FinishAllQuests();
+                else UpdateUI(nextDesc, Color.black);
             } else {
                 UpdateUI($"{GetCurrentQuestName(currentQuestStep)} ({currentKills}/{targetAmount})", Color.black);
             }
@@ -77,7 +78,7 @@ public class QuestManager : MonoBehaviour
     }
 
     void FinishAllQuests() {
-        UpdateUI("Chúc mừng! Bạn đã hoàn thành tất cả thử thách sinh tồn.", Color.green);
+        UpdateUI("Chúc mừng! Bạn đã hoàn thành tất cả thử thách.", Color.green);
         Invoke("HideUI", 5f);
     }
 

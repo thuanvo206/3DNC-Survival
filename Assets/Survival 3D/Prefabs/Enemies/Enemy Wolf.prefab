@@ -1713,7 +1713,7 @@ MonoBehaviour:
   maxWanderDistance: 5
   minWanderWaitTime: 1
   maxWanderWaitTime: 2
-  damage: 8
+  damage: 5
   attackRate: 1
   attackDistance: 2
   audioSource: {fileID: 7414060336482474505}
