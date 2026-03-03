@@ -87,10 +87,19 @@ public class PlayerNeeds : MonoBehaviour,IDamagable
     public void Eat(float amount)
     {
         hunger.Add(amount);
+
+        // Báo về QuestManager
+    if (QuestManager.instance != null) {
+        QuestManager.instance.OnNeedRecovered(true);
+    }
     }
     public void Drink(float amount)
     {
         thirst.Add(amount);
+
+        if (QuestManager.instance != null) {
+        QuestManager.instance.OnNeedRecovered(false);
+    }
     }
     public void Sleep(float amount)
     {
