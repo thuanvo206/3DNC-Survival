@@ -261,6 +261,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRate: 1
   attackdistance: 1
-  doesDealDamage: 0
-  damage: 0
+  doesDealDamage: 1
+  damage: 10
   doesGatherresources: 1
