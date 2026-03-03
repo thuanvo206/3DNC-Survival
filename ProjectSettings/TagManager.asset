@@ -8,6 +8,13 @@ TagManager:
   - Enemy Wolf
   - Enemy Bear
   - Enemy Zombie
+  - Iron
+  - Banana
+  - Apple
+  - Orange
+  - Log
+  - Stone
+  - Coconut
   layers:
   - Default
   - TransparentFX

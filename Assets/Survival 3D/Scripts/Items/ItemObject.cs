@@ -11,11 +11,17 @@ public class ItemObject : MonoBehaviour, IInteractable
         return string.Format("Pick Up {0}", item.displayName);
     }
 
-    public void OnInteract()
+public void OnInteract()
+{
+    // BƯỚC QUAN TRỌNG: Báo cho QuestManager biết vật phẩm nào vừa được nhặt
+    if (QuestManager.instance != null)
     {
-        //after interact add item to inventory
-        Inventory.instance.AddItem(item);
-        //destroy item in the world because we picked them up
-        Destroy(gameObject);
+        // Gửi tên của chính Object này (ví dụ: "Item Stone", "Item Log")
+        QuestManager.instance.OnResourceCollected(gameObject.name);
     }
+
+    // Sau đó thực hiện các lệnh cũ của bạn
+    Inventory.instance.AddItem(item);
+    Destroy(gameObject);
+}
 }
