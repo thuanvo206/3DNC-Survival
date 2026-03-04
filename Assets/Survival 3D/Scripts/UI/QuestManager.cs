@@ -94,12 +94,12 @@ public class QuestManager : MonoBehaviour
                 UpdateUI($"Nhiệm vụ 1: Lụm 5 Đá ({collectedStone}/5) và 10 Gỗ ({collectedWood}/10)\nThưởng: Bảng công thức", Color.black);
                 break;
             case 2:
-                UpdateUI($"Nhiệm vụ 2: Tìm thức ăn\nNhặt 3 Táo ({collectedApple}/3) và 3 Chuối ({collectedBanana}/3)", Color.magenta);
+                UpdateUI($"Nhiệm vụ 2: Tìm thức ăn\nNhặt 3 Táo ({collectedApple}/3) và 3 Chuối ({collectedBanana}/3)", Color.black);
                 break;
             case 3:
                 string f = hasEaten ? "X" : "0";
                 string d = hasDrunk ? "X" : "0";
-                UpdateUI($"Nhiệm vụ 3: Sinh tồn\nĂn hồi Đói [{f}] và Uống hồi Khát [{d}]", Color.blue);
+                UpdateUI($"Nhiệm vụ 3: Sinh tồn\nĂn hồi Đói [{f}] và Uống hồi Khát [{d}]", Color.black);
                 break;
             case 4:
                 UpdateUI($"Nhiệm vụ 4: Tiêu diệt Thỏ ({currentKills}/5)", Color.black);
